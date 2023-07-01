@@ -1,6 +1,6 @@
 ﻿using MathNet.Numerics.Distributions;
-using Microsoft.ML;
 using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 
 //Developer: SangonomiyaSakunovi
@@ -10,115 +10,202 @@ namespace FantasyOfSango_DailyMissionRecommendAlgorithm
     public class DMRAlgorithm
     {
         public static DMRAlgorithm Instance;
+        
+        private DMRAlgorithmConfig dMRConfig;
+        private ConcurrentDictionary<string, Normal> cacheNormalDistributionDict;
 
-        public void InitAlgorithm()
+        public void InitAlgorithm(DMRAlgorithmConfig dMRAlgorithmConfig = null)
         {
             Instance = this;
+            if (dMRAlgorithmConfig == null)
+            {
+                dMRAlgorithmConfig = new DMRAlgorithmConfig();
+            }
+            dMRConfig = dMRAlgorithmConfig;
+            InitSettings();
         }
 
-        string[] inputArray = { "Mission1SuitProbability", "Mission2SuitProbability", "Mission3SuitProbability", "Mission4SuitProbability" };
-
-        public void RunMulticlassClassification(string path, string[] inputArray)
+        private void InitSettings()
         {
-            var context = new MLContext();
-            var data = context.Data.LoadFromTextFile<DMRDataSet>(path, separatorChar: ',');
-            var trainTestSplit = context.Data.TrainTestSplit(data);
-
-            //"Features" is a special params which can combine all the params in inputArray into one vector
-            //The trainer will use this vector to train this model
-            var dataProcessPipeline = context.Transforms.Conversion.MapValueToKey("Label")
-                .Append(context.Transforms.Concatenate("Features", inputArray))
-                .Append(context.Transforms.NormalizeMinMax("Features"));
-            var trainer = context.MulticlassClassification.Trainers.SdcaNonCalibrated();
-            var pipeline = dataProcessPipeline.Append(trainer)
-                .Append(context.Transforms.Conversion.MapKeyToValue("PredictLabel"));
-
-            //Train the model
-            var model = pipeline.Fit(trainTestSplit.TrainSet);
-
-            //Predict and Evaluate the model
-            var predictions = model.Transform(trainTestSplit.TestSet);
-            var metrics = context.MulticlassClassification.Evaluate(predictions);
-
-            Console.WriteLine($"The MacroAccuracy of this model is: {metrics.MacroAccuracy}");
-
-            string consoleInput = Console.ReadLine();
-            if (consoleInput == "Save")
+            MongoDBService mongoDBService = new MongoDBService();
+            mongoDBService.InitService(dMRConfig.MongoDBName, dMRConfig.MongoDBAddress);
+            if (dMRConfig.SaveNormalDistributionCache)
             {
-                context.Model.Save(model, data.Schema, "softmax-regression-model.zip");
-                Console.WriteLine("Save model success.");
+                cacheNormalDistributionDict = new ConcurrentDictionary<string, Normal>();
             }
         }
 
-        public void PredictMulticlassClassification(string path, List<DMRDataSet> userDMRDataSetArray)
+        public void FitNormalDistributionToExcel(int sheetNum, int startRow, int endRow, int startColumn, int endColumn, string readPath, string write1Path, string write2Path)
         {
-            var context = new MLContext();
-            var model = context.Model.Load(path, out var modelSchema);
-            var predictionEngine = context.Model.CreatePredictionEngine<DMRDataSet, DMRPrediction>(model);
+            List<string> columnNames = MSOfficeService.LoadExcelColumnName(sheetNum, startColumn, endColumn, readPath);
+            List<List<float>> floats = MSOfficeService.LoadExcelMultiFloatValue(sheetNum, startRow, endRow, startColumn, endColumn, readPath);
+            List<List<string>> fitData = FitColumnNamesAndNormalDistributionToList(columnNames, floats);
+            List<string> fitLabel = FitLabelByMaxNormalDistributionProbability(fitData);
 
-            for (int i = 0; i < userDMRDataSetArray.Count; i++)
+            fitData.Add(fitLabel);
+            MSOfficeService.WriteExcelMultiObjectValue(fitData, write1Path);
+
+            List<List<string>> rawData = MSOfficeService.LoadExcelMultiStringValue(sheetNum, startRow - 1, endRow, startColumn, endColumn, readPath);
+            rawData.Add(fitLabel);
+            MSOfficeService.WriteExcelMultiObjectValue(rawData, write2Path);
+
+            Console.WriteLine("Excel file created successfully.");
+        }
+
+        public void FitNormalDistributionToCache(int sheetNum, int startRow, int endRow, int startColumn, int endColumn, string readPath)
+        {
+            List<string> columnNames = MSOfficeService.LoadExcelColumnName(sheetNum, startColumn, endColumn, readPath);
+            List<List<float>> floats = MSOfficeService.LoadExcelMultiFloatValue(sheetNum, startRow, endRow, startColumn, endColumn, readPath);
+            FitColumnNamesAndNormalDistributionToDict(columnNames, floats);
+        }
+
+        public List<DMRData> GetDMRProbabilityToList(List<DMRData> userDatas)
+        {
+            float probRawSum = 0;
+            float probEBSH_Sum = 0;
+            int minDoneCount = userDatas[0].DoneCount;
+            for (int index = 0; index < userDatas.Count; index++)
             {
-                var prediction = predictionEngine.Predict(userDMRDataSetArray[i]);
-                var probabilities = prediction.Score;
-                Console.WriteLine("The prediction result distribution:\n");
-                foreach (var label in modelSchema.GetColumnOrNull("Label").Value.Annotations.Schema)
+                DMRData data = userDatas[index];
+                Normal normal;
+                cacheNormalDistributionDict.TryGetValue(data.Label, out normal);
+                if (normal != null)
                 {
-                    var columnName = label.Name;
-                    var probability = probabilities[label.Index];
-                    Console.WriteLine($"{columnName}: {probability}");
+                    data.NormalProbabilityRaw = GetNormalDistributionDensity(normal, data.TimeReal);
+                    probRawSum += data.NormalProbabilityRaw;
+                }
+                if (userDatas[index].DoneCount < minDoneCount)
+                {
+                    minDoneCount = userDatas[index].DoneCount;
                 }
             }
-        }
-
-        double[] data = { 1.5, 2.7, 3.9, 4.2, 5.1 };
-
-        public void NormalDistribution(double[] data)
-        {
-            double mean = CalculateMean(data);
-            double standardDeviation = CalculateStandardDeviation(data, mean);
-
-            foreach (var value in data)
+            for (int index = 0; index < userDatas.Count; index++)
             {
-                double probability = Normal.PDF(mean, standardDeviation, value);
-                Console.WriteLine($"数据点 {value} 的正态分布概率为: {probability}");
+                DMRData data = userDatas[index];
+                int differDoneCount = data.DoneCount - minDoneCount;
+                data.NormalProbabilityFit = data.NormalProbabilityRaw / probRawSum;
+                data.EBHS_PassedDay_Probability = data.NormalProbabilityFit * CalculateEbbinghausRetention(dMRConfig.PassedDaysEBHS_K_Value, dMRConfig.PassedDaysEBHS_C_Value, data.PassedDays);
+                data.EBHS_DoneCount_Probability = data.NormalProbabilityFit * CalculateEbbinghausRetention(dMRConfig.DoneCountEBHS_K_Value, dMRConfig.DoneCountEBHS_C_Value, differDoneCount);
+                data.EBSH_Probability_Raw = (data.EBHS_PassedDay_Probability + data.EBHS_DoneCount_Probability) / 2;
+                probEBSH_Sum += data.EBSH_Probability_Raw;
             }
-
-        }
-
-        private double CalculateMean(double[] data)
-        {
-            double sum = 0;
-            foreach (var value in data)
+            for (int index = 0; index < userDatas.Count; index++)
             {
-                sum += value;
+                DMRData data = userDatas[index];
+                data.EBSH_Probability_Fit = data.EBSH_Probability_Raw / probEBSH_Sum;
             }
-            return sum / data.Length;
+            return userDatas;
         }
 
-        private double CalculateStandardDeviation(double[] data, double mean)
+        #region FitColumns
+        private List<List<string>> FitColumnNamesAndNormalDistributionToList(List<string> columnNames, List<List<float>> floats)
         {
-            double sumOfSquaredDifferences = 0;
-            foreach (var value in data)
+            if (dMRConfig.SaveNormalDistributionCache)
             {
-                double difference = value - mean;
+                cacheNormalDistributionDict.Clear();
+            }
+            List<List<string>> results = new List<List<string>>();
+            for (int index = 0; index < columnNames.Count; index++)
+            {
+                List<string> tempRes = new List<string>() { columnNames[index] };
+                tempRes = FitNormalDistributionToList(floats[index], tempRes);
+                results.Add(tempRes);
+            }
+            return results;
+        }
+
+        private void FitColumnNamesAndNormalDistributionToDict(List<string> columnNames, List<List<float>> floats)
+        {
+            cacheNormalDistributionDict.Clear();
+            for (int index = 0; index < columnNames.Count; index++)
+            {
+                Normal tempNormal = FitNormalDistribution(floats[index]);
+                cacheNormalDistributionDict.TryAdd(columnNames[index], tempNormal);
+            }
+        }
+
+        private List<string> FitLabelByMaxNormalDistributionProbability(List<List<string>> data)
+        {
+            List<string> tempData = new List<string>() { "Label" };
+            int columnNum = data.Count;
+            for (int index = 1; index < data[0].Count; index++)
+            {
+                float max = float.Parse(data[0][index]);
+                string colName = data[0][0];
+                for (int col = 1; col < columnNum; col++)
+                {
+                    float temp = float.Parse(data[col][index]);
+                    if (temp > max)
+                    {
+                        max = temp;
+                        colName = data[col][0];
+                    }
+                }
+                tempData.Add(colName);
+            }
+            return tempData;
+        }
+        #endregion
+
+        #region FitNormalDistribution
+        private List<string> FitNormalDistributionToList(List<float> data, List<string> tempRes)
+        {
+            float mean = CalculateMean(data);
+            float standardDeviation = CalculateStandardDeviation(data, mean);
+            Normal normalDistribution = new Normal(mean, standardDeviation);
+            if (dMRConfig.SaveNormalDistributionCache)
+            {
+                cacheNormalDistributionDict.TryAdd(tempRes[0], normalDistribution);
+            }
+            for (int i = 0; i < data.Count; i++)
+            {
+                string probability = normalDistribution.Density(data[i]).ToString();
+                tempRes.Add(probability);
+            }
+            return tempRes;
+        }
+
+        private Normal FitNormalDistribution(List<float> data)
+        {
+            float mean = CalculateMean(data);
+            float standardDeviation = CalculateStandardDeviation(data, mean);
+            Normal normalDistribution = new Normal(mean, standardDeviation);
+            return normalDistribution;
+        }
+
+        private float GetNormalDistributionDensity(Normal normal, float data)
+        {
+            return (float)normal.Density(data);
+        }
+
+        private float CalculateMean(List<float> data)
+        {
+            float sum = 0;
+            for (int i = 0; i < data.Count; i++)
+            {
+                sum += data[i];
+            }
+            return sum / data.Count;
+        }
+
+        private float CalculateStandardDeviation(List<float> data, float mean)
+        {
+            float sumOfSquaredDifferences = 0;
+            for (int i = 0; i < data.Count; i++)
+            {
+                float difference = data[i] - mean;
                 sumOfSquaredDifferences += difference * difference;
             }
-            return Math.Sqrt(sumOfSquaredDifferences / data.Length);
+            return (float)Math.Sqrt(sumOfSquaredDifferences / data.Count);
         }
+        #endregion
 
-        public void EbbinghausForgettingCurve()
+        #region FitEbbinghas
+        private float CalculateEbbinghausRetention(float k, float c, int timePassedInDays)
         {
-            int timePassedInDays = 10; // 经过的时间（以天为单位）
-            double retention = CalculateRetention(timePassedInDays);
-            Console.WriteLine($"经过 {timePassedInDays} 天后的保留率为: {retention}");
-        }
-
-        private double CalculateRetention(int timePassedInDays)
-        {
-            double k = 1.84; // 常量k
-            double c = 1.25; // 常量c
             double logarithm = Math.Log(timePassedInDays);
-            return (100 * k) / (Math.Pow(logarithm, c) + k);
+            return (float)((100 * k) / (Math.Pow(logarithm, c) + k));
         }
+        #endregion
     }
 }

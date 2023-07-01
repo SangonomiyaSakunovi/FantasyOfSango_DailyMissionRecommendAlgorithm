@@ -13,14 +13,10 @@ namespace FantasyOfSango_DailyMissionRecommendAlgorithm
 
         private static IMongoClient Client;
         private static IMongoDatabase Database;
-        private string mongoDBName;
-        private string mongoDBAddress;
 
-        public void InitService()
+        public void InitService(string mongoDBName, string mongoDBAddress)
         {
             Instance = this;
-            mongoDBName = AlgorithmConfig.Instance.GetMongoDBName();
-            mongoDBAddress = AlgorithmConfig.Instance.GetMongoDBAddress();
             MongoUrlBuilder mongoUrl = new MongoUrlBuilder(mongoDBAddress);
             Client = new MongoClient(mongoUrl.ToMongoUrl());
             Database = Client.GetDatabase(mongoDBName);
