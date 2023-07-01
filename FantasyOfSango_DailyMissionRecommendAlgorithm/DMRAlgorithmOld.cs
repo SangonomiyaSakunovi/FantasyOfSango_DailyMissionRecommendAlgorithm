@@ -20,10 +20,7 @@ namespace FantasyOfSango_DailyMissionRecommendAlgorithm
         /// <param name="zipPath">The trained model will save in this path, must .zip file</param>
         public void FitMulticlassClassification(string csvPath, string zipPath)
         {
-            //New a context to use ML method
             var mlContext = new MLContext();
-
-            //Load the DataSet, in this example, we use the .csv file and contain the header, you can find it in Data folder
             var trainingDataView = mlContext.Data.LoadFromTextFile<DMRDataSet>(csvPath, hasHeader: true, separatorChar: ',');
 
             //The Features is a special vector contain the nameof dimensions
@@ -34,15 +31,12 @@ namespace FantasyOfSango_DailyMissionRecommendAlgorithm
                                                             nameof(DMRDataSet.mission4))
                                                             .AppendCacheCheckpoint(mlContext));
 
-            //Add trainer before fit model
             var trainer = mlContext.MulticlassClassification.Trainers.SdcaMaximumEntropy(labelColumnName: "Label", featureColumnName: "Features")
                 .Append(mlContext.Transforms.Conversion.MapKeyToValue(outputColumnName: nameof(DMRDataSet.Label), inputColumnName: "Label"));
             var pipeline = dataProcessPipeline.Append(trainer);
 
-            //Fit model
             ITransformer trainedModel = pipeline.Fit(trainingDataView);
 
-            //Save model
             mlContext.Model.Save(trainedModel, trainingDataView.Schema, zipPath);
             Console.WriteLine("Save model success.");
         }
@@ -54,20 +48,15 @@ namespace FantasyOfSango_DailyMissionRecommendAlgorithm
         /// <param name="userDataArray">The real array when the server running</param>
         public void PredictMulticlassClassification(string modelPath, List<DMRDataSet> userDataArray)
         {
-            //New a context to use ML method
             var mlContext = new MLContext();
-
-            //Load model
             ITransformer trainedModel;
             using (var stream = new FileStream(modelPath, FileMode.Open, FileAccess.Read, FileShare.Read))
             {
                 trainedModel = mlContext.Model.Load(stream, out var inputSchema);
             }
 
-            //CreatePredictEngine
             var predictEngine = mlContext.Model.CreatePredictionEngine<DMRDataSet, DMRPrediction>(trainedModel);
 
-            //Predict and show the result
             for (int index = 0; index < userDataArray.Count; index++)
             {
                 var resultprediction = predictEngine.Predict(userDataArray[index]);

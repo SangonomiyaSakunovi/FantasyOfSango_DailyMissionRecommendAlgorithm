@@ -2,17 +2,21 @@
 
 namespace FantasyOfSango_DailyMissionRecommendAlgorithm
 {
+    /// <summary>
+    /// The config of DMRAlgorithm, we sugget to customize it before start
+    /// </summary>
     public class DMRAlgorithmConfig
     {
-        public string MongoDBName = "SangoServerGameDB";
-        public string MongoDBAddress = "mongodb://127.0.0.1:27017";
-        public bool SaveNormalDistributionCache = true;
+        public bool IsCacheNormalDistribution = true;
         public float PassedDaysEBHS_K_Value = 1.84f;
         public float PassedDaysEBHS_C_Value = 1.25f;
         public float DoneCountEBHS_K_Value = 1.84f;
         public float DoneCountEBHS_C_Value = 1.25f;
     }
 
+    /// <summary>
+    /// The DMRData of DMRAlgorithm, if want to change these, also need to redevelop our algorithm
+    /// </summary>
     public struct DMRData
     {
         public string Label { get; set; }
