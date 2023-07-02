@@ -38,7 +38,7 @@ namespace FantasyOfSango_DailyMissionRecommendAlgorithm
         }
 
         private void InitSettings()
-        {            
+        {
             if (dMRConfig.IsCacheNormalDistribution)
             {
                 cacheNormalDistributionDict = new ConcurrentDictionary<string, Normal>();
@@ -120,9 +120,12 @@ namespace FantasyOfSango_DailyMissionRecommendAlgorithm
                 DMRData data = userDatas[index];
                 int differDoneCount = data.DoneCount - minDoneCount;
                 data.NormalProbabilityFit = data.NormalProbabilityRaw / probRawSum;
-                data.EBHS_PassedDay_Probability = data.NormalProbabilityFit * CalculateEbbinghausRetention(dMRConfig.PassedDaysEBHS_K_Value, dMRConfig.PassedDaysEBHS_C_Value, data.PassedDays);
-                data.EBHS_DoneCount_Probability = data.NormalProbabilityFit * CalculateEbbinghausRetention(dMRConfig.DoneCountEBHS_K_Value, dMRConfig.DoneCountEBHS_C_Value, differDoneCount);
-                data.EBSH_Probability_Raw = (data.EBHS_PassedDay_Probability + data.EBHS_DoneCount_Probability) / 2;
+                float dayRetention = CalculateEbbinghausRetention(dMRConfig.PassedDaysEBHS_K_Value, dMRConfig.PassedDaysEBHS_C_Value, data.PassedDays);
+                data.EBHS_PassedDay_Probability = data.NormalProbabilityFit * (1 - dayRetention);
+                float countRetention = CalculateEbbinghausRetention(dMRConfig.DoneCountEBHS_K_Value, dMRConfig.DoneCountEBHS_C_Value, differDoneCount);
+                data.EBHS_DoneCount_Probability = data.NormalProbabilityFit * countRetention;
+                data.EBSH_Probability_Raw = (data.EBHS_PassedDay_Probability * dMRConfig.PassedDaysEBHS_Weight + data.EBHS_DoneCount_Probability * dMRConfig.DoneCountEBHS_Weight) /
+                    (dMRConfig.PassedDaysEBHS_Weight + dMRConfig.DoneCountEBHS_Weight);
                 probEBSH_Sum += data.EBSH_Probability_Raw;
                 userDatas[index] = data;
             }
@@ -213,7 +216,8 @@ namespace FantasyOfSango_DailyMissionRecommendAlgorithm
 
         private float GetNormalDistributionDensity(Normal normal, float data)
         {
-            return (float)normal.Density(data);
+            float density = (float)normal.Density(data);
+            return density;
         }
 
         private float CalculateMean(List<float> data)
@@ -223,7 +227,8 @@ namespace FantasyOfSango_DailyMissionRecommendAlgorithm
             {
                 sum += data[i];
             }
-            return sum / data.Count;
+            float mean = sum / data.Count;
+            return mean;
         }
 
         private float CalculateStandardDeviation(List<float> data, float mean)
@@ -234,7 +239,8 @@ namespace FantasyOfSango_DailyMissionRecommendAlgorithm
                 float difference = data[i] - mean;
                 sumOfSquaredDifferences += difference * difference;
             }
-            return (float)Math.Sqrt(sumOfSquaredDifferences / data.Count);
+            float stdDev = (float)Math.Sqrt(sumOfSquaredDifferences / data.Count);
+            return stdDev;
         }
         #endregion
 
@@ -242,7 +248,8 @@ namespace FantasyOfSango_DailyMissionRecommendAlgorithm
         private float CalculateEbbinghausRetention(float k, float c, int timePassedInDays)
         {
             double logarithm = Math.Log(timePassedInDays);
-            return (float)((100 * k) / (Math.Pow(logarithm, c) + k));
+            float ebhs = (float)(k / (Math.Pow(logarithm, c) + k));
+            return ebhs;
         }
         #endregion
 

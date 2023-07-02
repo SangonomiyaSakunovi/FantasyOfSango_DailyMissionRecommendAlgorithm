@@ -8,6 +8,8 @@ namespace FantasyOfSango_DailyMissionRecommendAlgorithm
     public class DMRAlgorithmConfig
     {
         public bool IsCacheNormalDistribution = true;
+        public int PassedDaysEBHS_Weight = 9;
+        public int DoneCountEBHS_Weight = 1;
         public float PassedDaysEBHS_K_Value = 1.84f;
         public float PassedDaysEBHS_C_Value = 1.25f;
         public float DoneCountEBHS_K_Value = 1.84f;

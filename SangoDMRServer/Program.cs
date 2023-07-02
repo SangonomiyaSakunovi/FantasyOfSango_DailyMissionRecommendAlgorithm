@@ -5,11 +5,13 @@
 //This config has a default value, you can define the configs customize and then Init this Instance. Good Luck!
 DMRAlgorithmConfig dMRAlgorithmConfig = new()
 {
-    IsCacheNormalDistribution = true,
+    IsCacheNormalDistribution = true,   
     PassedDaysEBHS_K_Value = 1.84f,
     PassedDaysEBHS_C_Value = 1.25f,
+    PassedDaysEBHS_Weight = 9,
     DoneCountEBHS_K_Value = 1.84f,
-    DoneCountEBHS_C_Value = 1.25f
+    DoneCountEBHS_C_Value = 1.25f,
+    DoneCountEBHS_Weight = 1,
 };
 DMRAlgorithm dMRAlgorithm = new();
 dMRAlgorithm.InitAlgorithm(dMRAlgorithmConfig);
@@ -26,10 +28,10 @@ DMRAlgorithm.Instance.FitNormalDistributionToCache(0, 2, 24, 4, 7,
 //Thie following example will show you how to use  DMRProbability with your server.
 
 //TODO: Get the streaming data from DataBase, such as MongoDB, the following is a simulate.
-DMRData dMRData1 = GetDMRDataRaw("mission1", 2, 1, 120);
-DMRData dMRData2 = GetDMRDataRaw("mission2", 1, 2, 134);
-DMRData dMRData3 = GetDMRDataRaw("mission3", 0, 1, 95);
-DMRData dMRData4 = GetDMRDataRaw("mission4", 1, 1, 106);
+DMRData dMRData1 = GetDMRDataRaw("mission1", 2, 1, 20);    //Too quick? Not a suitble choice
+DMRData dMRData2 = GetDMRDataRaw("mission2", 1, 2, 500);    //Tool slow? Of course should`t be recommened
+DMRData dMRData3 = GetDMRDataRaw("mission3", 3, 1, 95);
+DMRData dMRData4 = GetDMRDataRaw("mission4", 1, 3, 106);
 List<DMRData> dMRDataRaws = new List<DMRData>() { dMRData1, dMRData2, dMRData3, dMRData4 };
 
 List<DMRData> dMRDataFits = DMRAlgorithm.Instance.GetDMRProbabilityToList(dMRDataRaws);
