@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "MDRkm7PkO8+TXg5J0/Y/0BDF1LaZpICsW3djAdm70+5dbgluJDSi9PeiQ1yi3z17YNrnd/0e/lEiFRx9FaOiPw==",
+  "dgSpecHash": "G3zI93X/4RqN5WoSEkGQ5o7Q8x4THjSCW6mcHM8gkzzaMjaAbAOnGgP+iOyZkUwf+qyqnr9hmQpKQLWkNaFV7w==",
   "success": true,
-  "projectFilePath": "E:\\FantasyOfSango\\FantasyOfSango_DailyMissionRecommendAlgorithm\\SangoDMRServer\\SangoDMRServer.csproj",
+  "projectFilePath": "D:\\Projects\\SangoResearch\\FantasyOfSango_DailyMissionRecommendAlgorithm\\SangoDMRServer\\SangoServer_Example.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\16022\\.nuget\\packages\\epplus\\6.2.6\\epplus.6.2.6.nupkg.sha512",
     "C:\\Users\\16022\\.nuget\\packages\\epplus.interfaces\\6.1.1\\epplus.interfaces.6.1.1.nupkg.sha512",

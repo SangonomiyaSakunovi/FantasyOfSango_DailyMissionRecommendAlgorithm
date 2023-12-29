@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\FantasyOfSango\\FantasyOfSango_DailyMissionRecommendAlgorithm\\SangoDMRServer\\SangoDMRServer.csproj": {}
+    "D:\\Projects\\SangoResearch\\FantasyOfSango_DailyMissionRecommendAlgorithm\\SangoDMRServer\\SangoDMRServer.csproj": {}
   },
   "projects": {
-    "E:\\FantasyOfSango\\FantasyOfSango_DailyMissionRecommendAlgorithm\\FantasyOfSango_DailyMissionRecommendAlgorithm\\FantasyOfSango_DailyMissionRecommendAlgorithm.csproj": {
+    "D:\\Projects\\SangoResearch\\FantasyOfSango_DailyMissionRecommendAlgorithm\\FantasyOfSango_DailyMissionRecommendAlgorithm\\SangoScripts_MaxLikehoodAndEbbinghasuAlgorithm.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\FantasyOfSango\\FantasyOfSango_DailyMissionRecommendAlgorithm\\FantasyOfSango_DailyMissionRecommendAlgorithm\\FantasyOfSango_DailyMissionRecommendAlgorithm.csproj",
-        "projectName": "FantasyOfSango_DailyMissionRecommendAlgorithm",
-        "projectPath": "E:\\FantasyOfSango\\FantasyOfSango_DailyMissionRecommendAlgorithm\\FantasyOfSango_DailyMissionRecommendAlgorithm\\FantasyOfSango_DailyMissionRecommendAlgorithm.csproj",
+        "projectUniqueName": "D:\\Projects\\SangoResearch\\FantasyOfSango_DailyMissionRecommendAlgorithm\\FantasyOfSango_DailyMissionRecommendAlgorithm\\SangoScripts_MaxLikehoodAndEbbinghasuAlgorithm.csproj",
+        "projectName": "SangoScripts_MaxLikehoodAndEbbinghasuAlgorithm",
+        "projectPath": "D:\\Projects\\SangoResearch\\FantasyOfSango_DailyMissionRecommendAlgorithm\\FantasyOfSango_DailyMissionRecommendAlgorithm\\SangoScripts_MaxLikehoodAndEbbinghasuAlgorithm.csproj",
         "packagesPath": "C:\\Users\\16022\\.nuget\\packages\\",
-        "outputPath": "E:\\FantasyOfSango\\FantasyOfSango_DailyMissionRecommendAlgorithm\\FantasyOfSango_DailyMissionRecommendAlgorithm\\obj\\",
+        "outputPath": "D:\\Projects\\SangoResearch\\FantasyOfSango_DailyMissionRecommendAlgorithm\\FantasyOfSango_DailyMissionRecommendAlgorithm\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -74,18 +74,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.305\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "E:\\FantasyOfSango\\FantasyOfSango_DailyMissionRecommendAlgorithm\\SangoDMRServer\\SangoDMRServer.csproj": {
+    "D:\\Projects\\SangoResearch\\FantasyOfSango_DailyMissionRecommendAlgorithm\\SangoDMRServer\\SangoDMRServer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\FantasyOfSango\\FantasyOfSango_DailyMissionRecommendAlgorithm\\SangoDMRServer\\SangoDMRServer.csproj",
+        "projectUniqueName": "D:\\Projects\\SangoResearch\\FantasyOfSango_DailyMissionRecommendAlgorithm\\SangoDMRServer\\SangoDMRServer.csproj",
         "projectName": "SangoDMRServer",
-        "projectPath": "E:\\FantasyOfSango\\FantasyOfSango_DailyMissionRecommendAlgorithm\\SangoDMRServer\\SangoDMRServer.csproj",
+        "projectPath": "D:\\Projects\\SangoResearch\\FantasyOfSango_DailyMissionRecommendAlgorithm\\SangoDMRServer\\SangoDMRServer.csproj",
         "packagesPath": "C:\\Users\\16022\\.nuget\\packages\\",
-        "outputPath": "E:\\FantasyOfSango\\FantasyOfSango_DailyMissionRecommendAlgorithm\\SangoDMRServer\\obj\\",
+        "outputPath": "D:\\Projects\\SangoResearch\\FantasyOfSango_DailyMissionRecommendAlgorithm\\SangoDMRServer\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -107,8 +107,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "E:\\FantasyOfSango\\FantasyOfSango_DailyMissionRecommendAlgorithm\\FantasyOfSango_DailyMissionRecommendAlgorithm\\FantasyOfSango_DailyMissionRecommendAlgorithm.csproj": {
-                "projectPath": "E:\\FantasyOfSango\\FantasyOfSango_DailyMissionRecommendAlgorithm\\FantasyOfSango_DailyMissionRecommendAlgorithm\\FantasyOfSango_DailyMissionRecommendAlgorithm.csproj"
+              "D:\\Projects\\SangoResearch\\FantasyOfSango_DailyMissionRecommendAlgorithm\\FantasyOfSango_DailyMissionRecommendAlgorithm\\SangoScripts_MaxLikehoodAndEbbinghasuAlgorithm.csproj": {
+                "projectPath": "D:\\Projects\\SangoResearch\\FantasyOfSango_DailyMissionRecommendAlgorithm\\FantasyOfSango_DailyMissionRecommendAlgorithm\\SangoScripts_MaxLikehoodAndEbbinghasuAlgorithm.csproj"
               }
             }
           }
@@ -138,7 +138,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.305\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\FantasyOfSango\\FantasyOfSango_DailyMissionRecommendAlgorithm\\FantasyOfSango_DailyMissionRecommendAlgorithm\\FantasyOfSango_DailyMissionRecommendAlgorithm.csproj": {}
+    "D:\\Projects\\SangoResearch\\FantasyOfSango_DailyMissionRecommendAlgorithm\\FantasyOfSango_DailyMissionRecommendAlgorithm\\FantasyOfSango_DailyMissionRecommendAlgorithm.csproj": {}
   },
   "projects": {
-    "E:\\FantasyOfSango\\FantasyOfSango_DailyMissionRecommendAlgorithm\\FantasyOfSango_DailyMissionRecommendAlgorithm\\FantasyOfSango_DailyMissionRecommendAlgorithm.csproj": {
+    "D:\\Projects\\SangoResearch\\FantasyOfSango_DailyMissionRecommendAlgorithm\\FantasyOfSango_DailyMissionRecommendAlgorithm\\FantasyOfSango_DailyMissionRecommendAlgorithm.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\FantasyOfSango\\FantasyOfSango_DailyMissionRecommendAlgorithm\\FantasyOfSango_DailyMissionRecommendAlgorithm\\FantasyOfSango_DailyMissionRecommendAlgorithm.csproj",
+        "projectUniqueName": "D:\\Projects\\SangoResearch\\FantasyOfSango_DailyMissionRecommendAlgorithm\\FantasyOfSango_DailyMissionRecommendAlgorithm\\FantasyOfSango_DailyMissionRecommendAlgorithm.csproj",
         "projectName": "FantasyOfSango_DailyMissionRecommendAlgorithm",
-        "projectPath": "E:\\FantasyOfSango\\FantasyOfSango_DailyMissionRecommendAlgorithm\\FantasyOfSango_DailyMissionRecommendAlgorithm\\FantasyOfSango_DailyMissionRecommendAlgorithm.csproj",
+        "projectPath": "D:\\Projects\\SangoResearch\\FantasyOfSango_DailyMissionRecommendAlgorithm\\FantasyOfSango_DailyMissionRecommendAlgorithm\\FantasyOfSango_DailyMissionRecommendAlgorithm.csproj",
         "packagesPath": "C:\\Users\\16022\\.nuget\\packages\\",
-        "outputPath": "E:\\FantasyOfSango\\FantasyOfSango_DailyMissionRecommendAlgorithm\\FantasyOfSango_DailyMissionRecommendAlgorithm\\obj\\",
+        "outputPath": "D:\\Projects\\SangoResearch\\FantasyOfSango_DailyMissionRecommendAlgorithm\\FantasyOfSango_DailyMissionRecommendAlgorithm\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -74,7 +74,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.305\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }
