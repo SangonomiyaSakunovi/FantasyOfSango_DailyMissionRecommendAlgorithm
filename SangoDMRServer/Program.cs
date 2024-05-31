@@ -18,12 +18,12 @@ dMRAlgorithm.InitAlgorithm(dMRAlgorithmConfig);
 
 //The following example will show you how to use DMRAlgorithm.
 EMDEAlgorithm.Instance.FitNormalDistributionToExcel(0, 2, 24, 4, 7,
-    @"D:\Projects\SangoResearch\FantasyOfSango_DailyMissionRecommendAlgorithm\Data\PlayTime.xlsx",
-    @"D:\Projects\SangoResearch\FantasyOfSango_DailyMissionRecommendAlgorithm\Data\ProcessedSet1.xlsx",
-    @"D:\Projects\SangoResearch\FantasyOfSango_DailyMissionRecommendAlgorithm\Data\ProcessedSet2.xlsx");
+    @"D:\Projects\Reference\FantasyOfSango_DailyMissionRecommendAlgorithm\Data\PlayTime.xlsx",
+    @"D:\Projects\Reference\FantasyOfSango_DailyMissionRecommendAlgorithm\Data\ProcessedSet1.xlsx",
+    @"D:\Projects\Reference\FantasyOfSango_DailyMissionRecommendAlgorithm\Data\ProcessedSet2.xlsx");
 
 EMDEAlgorithm.Instance.FitNormalDistributionToCache(0, 2, 24, 4, 7,
-    @"D:\Projects\SangoResearch\FantasyOfSango_DailyMissionRecommendAlgorithm\Data\PlayTime.xlsx");
+    @"D:\Projects\Reference\FantasyOfSango_DailyMissionRecommendAlgorithm\Data\PlayTime.xlsx");
 
 //Thie following example will show you how to use  DMRProbability with your server.
 //TODO: Get the streaming data from DataBase, such as MongoDB, the following is a simulate.

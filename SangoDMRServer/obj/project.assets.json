@@ -2124,11 +2124,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Projects\\SangoResearch\\FantasyOfSango_DailyMissionRecommendAlgorithm\\SangoDMRServer\\SangoServer_Example.csproj",
+      "projectUniqueName": "D:\\Projects\\Reference\\FantasyOfSango_DailyMissionRecommendAlgorithm\\SangoDMRServer\\SangoServer_Example.csproj",
       "projectName": "SangoServer_Example",
-      "projectPath": "D:\\Projects\\SangoResearch\\FantasyOfSango_DailyMissionRecommendAlgorithm\\SangoDMRServer\\SangoServer_Example.csproj",
+      "projectPath": "D:\\Projects\\Reference\\FantasyOfSango_DailyMissionRecommendAlgorithm\\SangoDMRServer\\SangoServer_Example.csproj",
       "packagesPath": "C:\\Users\\16022\\.nuget\\packages\\",
-      "outputPath": "D:\\Projects\\SangoResearch\\FantasyOfSango_DailyMissionRecommendAlgorithm\\SangoDMRServer\\obj\\",
+      "outputPath": "D:\\Projects\\Reference\\FantasyOfSango_DailyMissionRecommendAlgorithm\\SangoDMRServer\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -2150,8 +2150,8 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "D:\\Projects\\SangoResearch\\FantasyOfSango_DailyMissionRecommendAlgorithm\\FantasyOfSango_DailyMissionRecommendAlgorithm\\SangoScripts_MaxLikehoodAndEbbinghasuAlgorithm.csproj": {
-              "projectPath": "D:\\Projects\\SangoResearch\\FantasyOfSango_DailyMissionRecommendAlgorithm\\FantasyOfSango_DailyMissionRecommendAlgorithm\\SangoScripts_MaxLikehoodAndEbbinghasuAlgorithm.csproj"
+            "D:\\Projects\\Reference\\FantasyOfSango_DailyMissionRecommendAlgorithm\\FantasyOfSango_DailyMissionRecommendAlgorithm\\SangoScripts_MaxLikehoodAndEbbinghasuAlgorithm.csproj": {
+              "projectPath": "D:\\Projects\\Reference\\FantasyOfSango_DailyMissionRecommendAlgorithm\\FantasyOfSango_DailyMissionRecommendAlgorithm\\SangoScripts_MaxLikehoodAndEbbinghasuAlgorithm.csproj"
             }
           }
         }
@@ -2160,6 +2160,11 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -2176,12 +2181,30 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[7.0.19, 7.0.19]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Host.win-x64",
+            "version": "[7.0.19, 7.0.19]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[7.0.19, 7.0.19]"
+          },
+          {
+            "name": "Microsoft.WindowsDesktop.App.Ref",
+            "version": "[7.0.19, 7.0.19]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300\\RuntimeIdentifierGraph.json"
       }
     }
   }
