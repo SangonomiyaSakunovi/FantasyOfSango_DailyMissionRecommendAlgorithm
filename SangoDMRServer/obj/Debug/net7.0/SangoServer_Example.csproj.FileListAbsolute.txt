@@ -48,7 +48,6 @@ D:\Projects\SangoResearch\FantasyOfSango_DailyMissionRecommendAlgorithm\SangoDMR
 D:\Projects\SangoResearch\FantasyOfSango_DailyMissionRecommendAlgorithm\SangoDMRServer\bin\Debug\net7.0\runtimes\win\lib\net7.0\System.Security.Cryptography.Pkcs.dll
 D:\Projects\SangoResearch\FantasyOfSango_DailyMissionRecommendAlgorithm\SangoDMRServer\bin\Debug\net7.0\SangoScripts_MaxLikehoodAndEbbinghasuAlgorithm.dll
 D:\Projects\SangoResearch\FantasyOfSango_DailyMissionRecommendAlgorithm\SangoDMRServer\bin\Debug\net7.0\SangoScripts_MaxLikehoodAndEbbinghasuAlgorithm.pdb
-D:\Projects\SangoResearch\FantasyOfSango_DailyMissionRecommendAlgorithm\SangoDMRServer\obj\Debug\net7.0\SangoServer_Example.csproj.CopyComplete
 D:\Projects\SangoResearch\FantasyOfSango_DailyMissionRecommendAlgorithm\SangoDMRServer\obj\Debug\net7.0\SangoServer_Example.dll
 D:\Projects\SangoResearch\FantasyOfSango_DailyMissionRecommendAlgorithm\SangoDMRServer\obj\Debug\net7.0\refint\SangoServer_Example.dll
 D:\Projects\SangoResearch\FantasyOfSango_DailyMissionRecommendAlgorithm\SangoDMRServer\obj\Debug\net7.0\SangoServer_Example.pdb
@@ -110,3 +109,4 @@ D:\Projects\Reference\FantasyOfSango_DailyMissionRecommendAlgorithm\SangoDMRServ
 D:\Projects\Reference\FantasyOfSango_DailyMissionRecommendAlgorithm\SangoDMRServer\obj\Debug\net7.0\SangoServer_Example.pdb
 D:\Projects\Reference\FantasyOfSango_DailyMissionRecommendAlgorithm\SangoDMRServer\obj\Debug\net7.0\SangoServer_Example.genruntimeconfig.cache
 D:\Projects\Reference\FantasyOfSango_DailyMissionRecommendAlgorithm\SangoDMRServer\obj\Debug\net7.0\ref\SangoServer_Example.dll
+D:\Projects\SangoResearch\FantasyOfSango_DailyMissionRecommendAlgorithm\SangoDMRServer\obj\Debug\net7.0\SangoSer.17400FB1.Up2Date
