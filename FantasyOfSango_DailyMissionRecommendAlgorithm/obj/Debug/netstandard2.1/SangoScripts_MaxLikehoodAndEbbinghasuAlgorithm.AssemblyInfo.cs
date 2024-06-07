@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SangoScripts_MaxLikehoodAndEbbinghasuAlgorithm")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b51152f3ead270ef749c3daeb018d86754202b20")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+41b19275585a275b2ea421e14dc107f7e9965ac2")]
 [assembly: System.Reflection.AssemblyProductAttribute("SangoScripts_MaxLikehoodAndEbbinghasuAlgorithm")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SangoScripts_MaxLikehoodAndEbbinghasuAlgorithm")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

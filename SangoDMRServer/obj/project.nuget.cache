@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "SLC8t3JF7mO37LA0DUCCWDBn5bjtoCmSl3qBfkCe3wusHZEVSjqUcwpLCNpz/miOtZc8ZQ81Jt7AZs6tAvSdag==",
+  "dgSpecHash": "WpG0sdPXXViaUN+MEi5eXf7DjqajhspWnEr6C0SIPdbTvtrEYnR+WRa/t5iu/msZ7jo3u14fyMKyV04CaW4Mpw==",
   "success": true,
-  "projectFilePath": "D:\\Projects\\SangoResearch\\FantasyOfSango_DailyMissionRecommendAlgorithm\\SangoDMRServer\\SangoServer_Example.csproj",
+  "projectFilePath": "D:\\Projects\\Reference\\FantasyOfSango_DailyMissionRecommendAlgorithm\\SangoDMRServer\\SangoServer_Example.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\16022\\.nuget\\packages\\epplus\\6.2.6\\epplus.6.2.6.nupkg.sha512",
     "C:\\Users\\16022\\.nuget\\packages\\epplus.interfaces\\6.1.1\\epplus.interfaces.6.1.1.nupkg.sha512",
@@ -42,10 +42,10 @@
     "C:\\Users\\16022\\.nuget\\packages\\system.text.json\\7.0.0\\system.text.json.7.0.0.nupkg.sha512",
     "C:\\Users\\16022\\.nuget\\packages\\system.threading.channels\\4.7.1\\system.threading.channels.4.7.1.nupkg.sha512",
     "C:\\Users\\16022\\.nuget\\packages\\system.threading.tasks\\4.3.0\\system.threading.tasks.4.3.0.nupkg.sha512",
-    "C:\\Users\\16022\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\7.0.18\\microsoft.windowsdesktop.app.ref.7.0.18.nupkg.sha512",
-    "C:\\Users\\16022\\.nuget\\packages\\microsoft.netcore.app.ref\\7.0.18\\microsoft.netcore.app.ref.7.0.18.nupkg.sha512",
-    "C:\\Users\\16022\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\7.0.18\\microsoft.aspnetcore.app.ref.7.0.18.nupkg.sha512",
-    "C:\\Users\\16022\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\7.0.18\\microsoft.netcore.app.host.win-x64.7.0.18.nupkg.sha512"
+    "C:\\Users\\16022\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\7.0.20\\microsoft.windowsdesktop.app.ref.7.0.20.nupkg.sha512",
+    "C:\\Users\\16022\\.nuget\\packages\\microsoft.netcore.app.ref\\7.0.20\\microsoft.netcore.app.ref.7.0.20.nupkg.sha512",
+    "C:\\Users\\16022\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\7.0.20\\microsoft.aspnetcore.app.ref.7.0.20.nupkg.sha512",
+    "C:\\Users\\16022\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\7.0.20\\microsoft.netcore.app.host.win-x64.7.0.20.nupkg.sha512"
   ],
   "logs": []
 }
