@@ -149,7 +149,10 @@ namespace SangoScripts_MaxLikehoodAndEbbinghasuAlgorithm
             for (int index = 0; index < columnNames.Count; index++)
             {
                 List<string> tempRes = new List<string>() { columnNames[index] };
+
+                Console.WriteLine("ColumnNames" + columnNames[index]);
                 tempRes = FitNormalDistributionToList(floats[index], tempRes);
+
                 results.Add(tempRes);
             }
             return results;
@@ -160,6 +163,7 @@ namespace SangoScripts_MaxLikehoodAndEbbinghasuAlgorithm
             cacheNormalDistributionDict.Clear();
             for (int index = 0; index < columnNames.Count; index++)
             {
+                Console.WriteLine("ColumnNames" + columnNames[index]);
                 Normal tempNormal = FitNormalDistribution(floats[index]);
                 cacheNormalDistributionDict.TryAdd(columnNames[index], tempNormal);
             }
@@ -194,6 +198,9 @@ namespace SangoScripts_MaxLikehoodAndEbbinghasuAlgorithm
             float mean = CalculateMean(data);
             float standardDeviation = CalculateStandardDeviation(data, mean);
             Normal normalDistribution = new Normal(mean, standardDeviation);
+
+            Console.WriteLine(mean + " " + standardDeviation);
+
             if (emdeConfig.IsCacheNormalDistribution)
             {
                 cacheNormalDistributionDict.TryAdd(tempRes[0], normalDistribution);
@@ -210,6 +217,7 @@ namespace SangoScripts_MaxLikehoodAndEbbinghasuAlgorithm
         {
             float mean = CalculateMean(data);
             float standardDeviation = CalculateStandardDeviation(data, mean);
+            Console.WriteLine("mean+sd   " + mean + "     " + standardDeviation);
             Normal normalDistribution = new Normal(mean, standardDeviation);
             return normalDistribution;
         }

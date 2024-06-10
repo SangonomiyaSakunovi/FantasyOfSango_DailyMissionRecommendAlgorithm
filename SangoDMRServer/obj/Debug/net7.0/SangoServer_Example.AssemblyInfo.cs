@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SangoServer_Example")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+41b19275585a275b2ea421e14dc107f7e9965ac2")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2371d3394c43660eedf1bdefeb7b34af35ca1ebb")]
 [assembly: System.Reflection.AssemblyProductAttribute("SangoServer_Example")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SangoServer_Example")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

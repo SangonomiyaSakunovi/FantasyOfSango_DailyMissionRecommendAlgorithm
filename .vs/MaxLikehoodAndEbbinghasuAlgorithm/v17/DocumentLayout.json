@@ -1,18 +1,22 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\Projects\\Reference\\FantasyOfSango_DailyMissionRecommendAlgorithm\\",
+  "WorkspaceRootPath": "D:\\Projects\\SangoResearch\\FantasyOfSango_DailyMissionRecommendAlgorithm\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A6D61EDA-AA3D-47F9-B2FF-E9AF26C6C8E2}|SangoDMRServer\\SangoServer_Example.csproj|D:\\Projects\\Reference\\FantasyOfSango_DailyMissionRecommendAlgorithm\\sangodmrserver\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A6D61EDA-AA3D-47F9-B2FF-E9AF26C6C8E2}|SangoDMRServer\\SangoServer_Example.csproj|solutionrelative:sangodmrserver\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{ED31CC15-D96F-470C-80DB-73000BB2A118}|FantasyOfSango_DailyMissionRecommendAlgorithm\\SangoScripts_MaxLikehoodAndEbbinghasuAlgorithm.csproj|d:\\projects\\reference\\fantasyofsango_dailymissionrecommendalgorithm\\fantasyofsango_dailymissionrecommendalgorithm\\emdealgorithm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{ED31CC15-D96F-470C-80DB-73000BB2A118}|FantasyOfSango_DailyMissionRecommendAlgorithm\\SangoScripts_MaxLikehoodAndEbbinghasuAlgorithm.csproj|d:\\projects\\sangoresearch\\fantasyofsango_dailymissionrecommendalgorithm\\fantasyofsango_dailymissionrecommendalgorithm\\emdealgorithm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{ED31CC15-D96F-470C-80DB-73000BB2A118}|FantasyOfSango_DailyMissionRecommendAlgorithm\\SangoScripts_MaxLikehoodAndEbbinghasuAlgorithm.csproj|solutionrelative:fantasyofsango_dailymissionrecommendalgorithm\\emdealgorithm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{ED31CC15-D96F-470C-80DB-73000BB2A118}|FantasyOfSango_DailyMissionRecommendAlgorithm\\SangoScripts_MaxLikehoodAndEbbinghasuAlgorithm.csproj|D:\\Projects\\Reference\\FantasyOfSango_DailyMissionRecommendAlgorithm\\fantasyofsango_dailymissionrecommendalgorithm\\emdealgorithmconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{ED31CC15-D96F-470C-80DB-73000BB2A118}|FantasyOfSango_DailyMissionRecommendAlgorithm\\SangoScripts_MaxLikehoodAndEbbinghasuAlgorithm.csproj|d:\\projects\\sangoresearch\\fantasyofsango_dailymissionrecommendalgorithm\\fantasyofsango_dailymissionrecommendalgorithm\\emdealgorithmconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{ED31CC15-D96F-470C-80DB-73000BB2A118}|FantasyOfSango_DailyMissionRecommendAlgorithm\\SangoScripts_MaxLikehoodAndEbbinghasuAlgorithm.csproj|solutionrelative:fantasyofsango_dailymissionrecommendalgorithm\\emdealgorithmconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A6D61EDA-AA3D-47F9-B2FF-E9AF26C6C8E2}|SangoDMRServer\\SangoServer_Example.csproj|d:\\projects\\sangoresearch\\fantasyofsango_dailymissionrecommendalgorithm\\sangodmrserver\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A6D61EDA-AA3D-47F9-B2FF-E9AF26C6C8E2}|SangoDMRServer\\SangoServer_Example.csproj|solutionrelative:sangodmrserver\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ED31CC15-D96F-470C-80DB-73000BB2A118}|FantasyOfSango_DailyMissionRecommendAlgorithm\\SangoScripts_MaxLikehoodAndEbbinghasuAlgorithm.csproj|d:\\projects\\sangoresearch\\fantasyofsango_dailymissionrecommendalgorithm\\fantasyofsango_dailymissionrecommendalgorithm\\emdealgorithmold.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ED31CC15-D96F-470C-80DB-73000BB2A118}|FantasyOfSango_DailyMissionRecommendAlgorithm\\SangoScripts_MaxLikehoodAndEbbinghasuAlgorithm.csproj|solutionrelative:fantasyofsango_dailymissionrecommendalgorithm\\emdealgorithmold.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 9,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
@@ -42,41 +46,55 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
+              "Title": "EMDEAlgorithmOld.cs",
+              "DocumentMoniker": "D:\\Projects\\SangoResearch\\FantasyOfSango_DailyMissionRecommendAlgorithm\\FantasyOfSango_DailyMissionRecommendAlgorithm\\EMDEAlgorithmOld.cs",
+              "RelativeDocumentMoniker": "FantasyOfSango_DailyMissionRecommendAlgorithm\\EMDEAlgorithmOld.cs",
+              "ToolTip": "D:\\Projects\\SangoResearch\\FantasyOfSango_DailyMissionRecommendAlgorithm\\FantasyOfSango_DailyMissionRecommendAlgorithm\\EMDEAlgorithmOld.cs",
+              "RelativeToolTip": "FantasyOfSango_DailyMissionRecommendAlgorithm\\EMDEAlgorithmOld.cs",
+              "ViewState": "AQIAAG0AAAAAAAAAAAAQwIMAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-09T12:08:49.451Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "Program.cs",
-              "DocumentMoniker": "D:\\Projects\\Reference\\FantasyOfSango_DailyMissionRecommendAlgorithm\\SangoDMRServer\\Program.cs",
+              "DocumentMoniker": "D:\\Projects\\SangoResearch\\FantasyOfSango_DailyMissionRecommendAlgorithm\\SangoDMRServer\\Program.cs",
               "RelativeDocumentMoniker": "SangoDMRServer\\Program.cs",
-              "ToolTip": "D:\\Projects\\Reference\\FantasyOfSango_DailyMissionRecommendAlgorithm\\SangoDMRServer\\Program.cs",
+              "ToolTip": "D:\\Projects\\SangoResearch\\FantasyOfSango_DailyMissionRecommendAlgorithm\\SangoDMRServer\\Program.cs",
               "RelativeToolTip": "SangoDMRServer\\Program.cs",
-              "ViewState": "AQIAAA8AAAAAAAAAAAAAACcAAAA8AAAA",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAAACcAAAAxAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-27T09:38:08.818Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "EMDEAlgorithm.cs",
-              "DocumentMoniker": "D:\\Projects\\Reference\\FantasyOfSango_DailyMissionRecommendAlgorithm\\FantasyOfSango_DailyMissionRecommendAlgorithm\\EMDEAlgorithm.cs",
+              "DocumentMoniker": "D:\\Projects\\SangoResearch\\FantasyOfSango_DailyMissionRecommendAlgorithm\\FantasyOfSango_DailyMissionRecommendAlgorithm\\EMDEAlgorithm.cs",
               "RelativeDocumentMoniker": "FantasyOfSango_DailyMissionRecommendAlgorithm\\EMDEAlgorithm.cs",
-              "ToolTip": "D:\\Projects\\Reference\\FantasyOfSango_DailyMissionRecommendAlgorithm\\FantasyOfSango_DailyMissionRecommendAlgorithm\\EMDEAlgorithm.cs",
+              "ToolTip": "D:\\Projects\\SangoResearch\\FantasyOfSango_DailyMissionRecommendAlgorithm\\FantasyOfSango_DailyMissionRecommendAlgorithm\\EMDEAlgorithm.cs",
               "RelativeToolTip": "FantasyOfSango_DailyMissionRecommendAlgorithm\\EMDEAlgorithm.cs",
-              "ViewState": "AQIAAE0BAAAAAAAAAAAkwAYBAAAQAAAA",
+              "ViewState": "AQIAAHIAAAAAAAAAAAAmwIIAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-27T09:38:08.979Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "EMDEAlgorithmConfig.cs",
-              "DocumentMoniker": "D:\\Projects\\Reference\\FantasyOfSango_DailyMissionRecommendAlgorithm\\FantasyOfSango_DailyMissionRecommendAlgorithm\\EMDEAlgorithmConfig.cs",
+              "DocumentMoniker": "D:\\Projects\\SangoResearch\\FantasyOfSango_DailyMissionRecommendAlgorithm\\FantasyOfSango_DailyMissionRecommendAlgorithm\\EMDEAlgorithmConfig.cs",
               "RelativeDocumentMoniker": "FantasyOfSango_DailyMissionRecommendAlgorithm\\EMDEAlgorithmConfig.cs",
-              "ToolTip": "D:\\Projects\\Reference\\FantasyOfSango_DailyMissionRecommendAlgorithm\\FantasyOfSango_DailyMissionRecommendAlgorithm\\EMDEAlgorithmConfig.cs",
+              "ToolTip": "D:\\Projects\\SangoResearch\\FantasyOfSango_DailyMissionRecommendAlgorithm\\FantasyOfSango_DailyMissionRecommendAlgorithm\\EMDEAlgorithmConfig.cs",
               "RelativeToolTip": "FantasyOfSango_DailyMissionRecommendAlgorithm\\EMDEAlgorithmConfig.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAA1AAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAsAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-27T09:38:08.977Z"
+              "WhenOpened": "2024-05-27T09:38:08.977Z",
+              "EditorCaption": ""
             }
           ]
         },
